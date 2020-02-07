@@ -28,15 +28,27 @@
       guardedRoute
     </button>
   </mat-list-item>
+  <mat-list-item>
+    <button
+      [routerLink]="['task', 'dataCommunication']"
+      color="primary"
+      mat-raised-button>
+      dataCommunication
+    </button>
+  </mat-list-item>
 </mat-list>
 
 <mat-grid-list cols="4">
   <mat-grid-tile [colspan]="4">
-    <router-outlet></router-outlet>
+    <mat-card [style.minHeight]="'80px'">
+      <router-outlet></router-outlet>
+    </mat-card>
   </mat-grid-tile>
   <mat-grid-tile [colspan]="4">
-    <app-on-changes (loggedIn)="authService.isLoggedIn.next($event)"
-                    [isLoggedIn]="loggedIn">
-    </app-on-changes>
+    <mat-card>
+      <app-on-changes (loggedIn)="authService.isLoggedIn.next($event)"
+                      [isLoggedIn]="loggedIn">
+      </app-on-changes>
+    </mat-card>
   </mat-grid-tile>
 </mat-grid-list>

@@ -11,9 +11,15 @@ const routes: Routes = [
         canActivate: [AuthGuard],
         loadChildren: () => import('./wallet-hub-tasks/guarded-route/guarded-route.module')
           .then(m => m.GuardedRouteModule)
+      },
+      {
+        path: 'dataCommunication',
+        loadChildren: () => import('./wallet-hub-tasks/data-communication/data-communication.module')
+          .then(m => m.DataCommunicationModule)
       }
     ]
-  }
+  },
+  {path: '**', redirectTo: '', pathMatch: 'full'}
 ];
 
 @NgModule({
