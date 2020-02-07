@@ -1,0 +1,7 @@
+<mat-card>
+<pre [ngStyle]="{'color': isLoggedIn?'green':'red'}">
+  {{changesOutput|json}}
+  <br>
+ count: {{changeCounter}}
+</pre>
+</mat-card>
