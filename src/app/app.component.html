@@ -3,7 +3,11 @@
     [routerLink]="['/']"
     color="primary"
     mat-raised-button>
-    <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
+    <mat-icon
+      aria-hidden="false"
+      aria-label="Home icon">
+      home
+    </mat-icon>
   </button>
   <button
     (click)="loggedIn = true"
@@ -39,7 +43,7 @@
 </mat-list>
 
 <mat-grid-list cols="4">
-  <mat-grid-tile [colspan]="4">
+  <mat-grid-tile [colspan]="4" [rowspan]="2">
     <mat-card [style.minHeight]="'80px'">
       <router-outlet></router-outlet>
     </mat-card>

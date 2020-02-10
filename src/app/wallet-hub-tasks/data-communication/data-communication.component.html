@@ -1,6 +1,12 @@
-<mat-radio-group aria-label="Select an option">
-  <mat-radio-button value="Communicated value 1">Communicated value 1</mat-radio-button>
-  <mat-radio-button value="Communicated value 2">Communicated value 2</mat-radio-button>
-  <mat-radio-button value="Communicated value 3">Communicated value 3</mat-radio-button>
-  <mat-radio-button value="Communicated value 4">Communicated value 4</mat-radio-button>
-</mat-radio-group>
+<form [formGroup]="communicationForm">
+  <mat-grid-list cols="4" rowHeight="60">
+    <mat-grid-tile *ngFor="let formControl of communicationForm.controls | keyvalue"
+                   [colspan]="4"
+                   [rowspan]="1">
+        <mat-form-field appearance="fill">
+          <mat-label [innerHTML]="formControl.key"></mat-label>
+          <input [formControl]="communicationForm.controls[formControl.key]" matInput>
+        </mat-form-field>
+    </mat-grid-tile>
+  </mat-grid-list>
+</form>
