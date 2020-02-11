@@ -1,1 +1,5 @@
-<p>guarded-route works!</p>
+<div *ngIf="messageData">
+  <h3 [innerHTML]="messageData.email"></h3>
+  <p [innerHTML]="messageData.message"></p>
+  <p [innerHTML]="messageData.donation"></p>
+</div>

@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {EmailValidator, FormBuilder, FormGroup, Validator, Validators} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {AuthService} from '../auth.service';
 
 @Component({
   selector: 'app-data-communication',
@@ -8,26 +9,26 @@ import {EmailValidator, FormBuilder, FormGroup, Validator, Validators} from '@an
 })
 export class DataCommunicationComponent implements OnInit {
   communicationForm: FormGroup;
+  validators;
 
-  constructor(private fb: FormBuilder) {
-    const validators = {
+  constructor(private fb: FormBuilder, private authService: AuthService) {
+    this.validators = {
       email: Validators.pattern(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i),
       message: Validators.required,
       donation: Validators.required
     };
-
-    this.communicationForm = this.fb.group({
-      email: ['', validators.email],
-      message: ['', validators.message],
-      donation: ['', validators.donation]
-    });
-
-    console.log(this.communicationForm.controls);
-
   }
 
   ngOnInit() {
+    this.communicationForm = this.fb.group({
+      email: ['', this.validators.email],
+      message: ['', this.validators.message],
+      donation: ['', this.validators.donation]
+    });
+  }
 
+  onSubmit() {
+    this.authService.communicatedData.next(this.communicationForm.value);
   }
 
 }

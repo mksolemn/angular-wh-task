@@ -1,12 +1,25 @@
-<form [formGroup]="communicationForm">
-  <mat-grid-list cols="4" rowHeight="60">
-    <mat-grid-tile *ngFor="let formControl of communicationForm.controls | keyvalue"
-                   [colspan]="4"
-                   [rowspan]="1">
+<form (ngSubmit)="onSubmit()" [formGroup]="communicationForm">
+
+    <div *ngFor="let formControl of communicationForm.controls | keyvalue">
+      <ng-template [ngIfElse]="duration" [ngIf]="formControl.key !== 'donation'">
         <mat-form-field appearance="fill">
           <mat-label [innerHTML]="formControl.key"></mat-label>
           <input [formControl]="communicationForm.controls[formControl.key]" matInput>
         </mat-form-field>
-    </mat-grid-tile>
-  </mat-grid-list>
+      </ng-template>
+      <ng-template #duration>
+        <mat-form-field appearance="fill">
+          <mat-label [innerHTML]="formControl.key"></mat-label>
+          <input [formControl]="communicationForm.controls[formControl.key]"
+                 appFormatCurrency
+                 matInput>
+        </mat-form-field>
+      </ng-template>
+    </div>
+
+  <button [disabled]="!communicationForm.valid"
+          color="primary"
+          mat-raised-button
+          type="submit">Submit
+  </button>
 </form>

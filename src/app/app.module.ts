@@ -25,7 +25,7 @@ import {MatButtonModule} from '@angular/material';
     MatGridListModule,
     MatIconModule
   ],
-  exports:[MatGridListModule],
+  exports: [MatGridListModule],
   providers: [],
   bootstrap: [AppComponent]
 })

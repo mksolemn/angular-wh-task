@@ -42,17 +42,14 @@
   </mat-list-item>
 </mat-list>
 
-<mat-grid-list cols="4">
-  <mat-grid-tile [colspan]="4" [rowspan]="2">
-    <mat-card [style.minHeight]="'80px'">
+
+    <mat-card>
       <router-outlet></router-outlet>
     </mat-card>
-  </mat-grid-tile>
-  <mat-grid-tile [colspan]="4">
+
     <mat-card>
       <app-on-changes (loggedIn)="authService.isLoggedIn.next($event)"
                       [isLoggedIn]="loggedIn">
       </app-on-changes>
     </mat-card>
-  </mat-grid-tile>
-</mat-grid-list>
+
