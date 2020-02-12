@@ -1,10 +1,10 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
 import {OnChangesModule} from './wallet-hub-tasks/on-changes/on-changes.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {MatCardModule, MatGridListModule, MatIconModule, MatListModule, MatMenuModule, MatToolbarModule} from '@angular/material';
 import {MatButtonModule} from '@angular/material';
 
@@ -16,7 +16,7 @@ import {MatButtonModule} from '@angular/material';
     BrowserModule,
     AppRoutingModule,
     OnChangesModule,
-    BrowserAnimationsModule,
+    NoopAnimationsModule,
     MatMenuModule,
     MatButtonModule,
     MatListModule,
@@ -25,8 +25,11 @@ import {MatButtonModule} from '@angular/material';
     MatGridListModule,
     MatIconModule
   ],
-  exports: [MatGridListModule],
+  exports: [
+    MatGridListModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

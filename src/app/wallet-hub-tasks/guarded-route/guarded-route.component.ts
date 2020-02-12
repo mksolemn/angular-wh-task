@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthService} from '../auth.service';
 import {CommunicationForm} from '../communication-form';
+import {routerAnimation} from '../router-animation/router-animation';
 
 @Component({
   selector: 'app-guarded-route',
