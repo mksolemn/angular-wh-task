@@ -9,6 +9,7 @@ const routes: Routes = [
       {
         path: 'guardedRoute',
         canActivate: [AuthGuard],
+        data: {animation: 'AngularAnimation'}, //https://angular.io/guide/route-animations
         loadChildren: () => import('./wallet-hub-tasks/guarded-route/guarded-route.module')
           .then(m => m.GuardedRouteModule)
       },

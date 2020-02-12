@@ -43,13 +43,13 @@
 </mat-list>
 
 
-    <mat-card>
-      <router-outlet></router-outlet>
-    </mat-card>
+<mat-card>
+  <router-outlet></router-outlet>
+</mat-card>
 
-    <mat-card>
-      <app-on-changes (loggedIn)="authService.isLoggedIn.next($event)"
-                      [isLoggedIn]="loggedIn">
-      </app-on-changes>
-    </mat-card>
+<mat-card>
+  <app-on-changes (loggedIn)="authService.isLoggedIn.next($event)"
+                  [isLoggedIn]="loggedIn">
+  </app-on-changes>
+</mat-card>
 
