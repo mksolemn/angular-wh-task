@@ -59,14 +59,18 @@ main {
 }
 
 .cssTransition {
-  opacity: 0.1;
+  transition: all ease-in-out .75s;
+  border: solid 2px transparent;
 
   &.on {
     opacity: 1;
+    background: #16a085;
+    border-color: #16a085;
   }
 
   &.off {
-    opacity: 0.5;
+    background: #7f8c8d;
+    border-color: #7f8c8d;
   }
 }
 

@@ -25,7 +25,7 @@ export class AppComponent implements OnInit, AfterContentChecked {
   }
 
   ngAfterContentChecked(): void {
-    this.userCssTransition = this.animationState;
+    this.userCssTransition = (this.animationState === 'cssTransition');
   }
 
   logout() {
@@ -35,6 +35,7 @@ export class AppComponent implements OnInit, AfterContentChecked {
 
   getState(outlet) {
   debugger;
+    console.log('State: ', outlet.activatedRouteData);
     this.animationState = outlet.activatedRouteData.state;
     return outlet.activatedRouteData.state;
   }
