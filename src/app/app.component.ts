@@ -1,4 +1,14 @@
-import {AfterContentChecked, Component, OnInit, Renderer2, TemplateRef, ViewChild} from '@angular/core';
+import {
+  AfterContentChecked,
+  AfterContentInit, AfterViewChecked, ChangeDetectorRef,
+  Component,
+  OnChanges,
+  OnInit,
+  Renderer2,
+  SimpleChanges,
+  TemplateRef,
+  ViewChild
+} from '@angular/core';
 import {AuthService} from './wallet-hub-tasks/auth.service';
 import {Router} from '@angular/router';
 import {routerTransition} from './wallet-hub-tasks/router-transition';
@@ -9,23 +19,16 @@ import {routerTransition} from './wallet-hub-tasks/router-transition';
   styleUrls: ['./app.component.scss'],
   animations: [routerTransition],
 })
-export class AppComponent implements OnInit, AfterContentChecked {
+export class AppComponent {
   public loggedIn: boolean;
-  public userCssTransition: boolean;
+  public useCssTransition: string;
   @ViewChild('templateref', {static: false}) public templateref: TemplateRef<any>;
   private animationState;
 
   constructor(private authService: AuthService,
-              private router: Router) {
-    this.userCssTransition = false;
-  }
-
-  ngOnInit(): void {
-
-  }
-
-  ngAfterContentChecked(): void {
-    this.userCssTransition = (this.animationState === 'cssTransition');
+              private router: Router,
+              private cd: ChangeDetectorRef) {
+    this.useCssTransition = 'off';
   }
 
   logout() {
@@ -34,10 +37,13 @@ export class AppComponent implements OnInit, AfterContentChecked {
   }
 
   getState(outlet) {
-  debugger;
-    console.log('State: ', outlet.activatedRouteData);
-    this.animationState = outlet.activatedRouteData.state;
-    return outlet.activatedRouteData.state;
+    const activeState = outlet.activatedRouteData.state;
+    if (this.animationState !== activeState) {
+      this.animationState = activeState;
+      this.useCssTransition = (this.animationState === 'cssTransition') ? 'on' : 'off';
+      this.cd.detectChanges();
+    }
+    return activeState;
   }
 
 }

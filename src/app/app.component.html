@@ -46,7 +46,7 @@
 
 <main #templateref
       [@routerTransition]="getState(o)"
-      [ngClass]="userCssTransition?'on':'off'"
+      [ngClass]="useCssTransition"
       class="cssTransition">
   <router-outlet #o="outlet"></router-outlet>
 </main>
