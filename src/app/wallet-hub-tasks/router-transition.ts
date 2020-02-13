@@ -1,7 +1,7 @@
 import {trigger, animate, style, group, query, transition} from '@angular/animations';
 
 export const routerTransition = trigger('routerTransition', [
-  transition('* <=> *', [
+  transition('* => guardedRoute', [
     query(':enter, :leave', style({position: 'absolute', width: '100%'})
       , {optional: true}),
     group([

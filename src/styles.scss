@@ -49,3 +49,24 @@ main {
   height: 400px;
   border: dot-dash 1px;
 }
+
+.cssTransition {
+
+}
+
+.guardedRoute {
+
+}
+
+.cssTransition {
+  opacity: 0.1;
+
+  &.on {
+    opacity: 1;
+  }
+
+  &.off {
+    opacity: 0.5;
+  }
+}
+

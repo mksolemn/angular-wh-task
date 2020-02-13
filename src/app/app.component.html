@@ -29,7 +29,7 @@
       [routerLink]="['task', 'guardedRoute']"
       color="primary"
       mat-raised-button>
-      guardedRoute
+      guardedRoute (angular animation)
     </button>
   </mat-list-item>
   <mat-list-item>
@@ -37,14 +37,17 @@
       [routerLink]="['task', 'dataCommunication']"
       color="primary"
       mat-raised-button>
-      dataCommunication
+      dataCommunication (css animation)
     </button>
   </mat-list-item>
 </mat-list>
 
 <mat-divider [inset]="true"></mat-divider>
 
-<main [@routerTransition]="getState(o)">
+<main #templateref
+      [@routerTransition]="getState(o)"
+      [ngClass]="userCssTransition?'on':'off'"
+      class="cssTransition">
   <router-outlet #o="outlet"></router-outlet>
 </main>
 

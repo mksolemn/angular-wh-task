@@ -15,6 +15,7 @@ const routes: Routes = [
       },
       {
         path: 'dataCommunication',
+        data: {state: 'cssTransition'},
         loadChildren: () => import('./wallet-hub-tasks/data-communication/data-communication.module')
           .then(m => m.DataCommunicationModule)
       }
