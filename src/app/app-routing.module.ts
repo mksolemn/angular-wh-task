@@ -9,6 +9,7 @@ const routes: Routes = [
       {
         path: 'guardedRoute',
         canActivate: [AuthGuard],
+        data: {state: 'guardedRoute'},
         loadChildren: () => import('./wallet-hub-tasks/guarded-route/guarded-route.module')
           .then(m => m.GuardedRouteModule)
       },

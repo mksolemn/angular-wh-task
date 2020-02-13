@@ -16,7 +16,7 @@ import {MatButtonModule} from '@angular/material';
     BrowserModule,
     AppRoutingModule,
     OnChangesModule,
-    NoopAnimationsModule,
+    BrowserAnimationsModule,
     MatMenuModule,
     MatButtonModule,
     MatListModule,

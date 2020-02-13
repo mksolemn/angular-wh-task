@@ -42,14 +42,14 @@
   </mat-list-item>
 </mat-list>
 
+<mat-divider [inset]="true"></mat-divider>
 
-<mat-card [@routerAnimation]="prepareRoute(outlet)">
-  <router-outlet #outlet="outlet"></router-outlet>
-</mat-card>
+<main [@routerTransition]="getState(o)">
+  <router-outlet #o="outlet"></router-outlet>
+</main>
 
-<mat-card>
-  <app-on-changes (loggedIn)="authService.isLoggedIn.next($event)"
-                  [isLoggedIn]="loggedIn">
-  </app-on-changes>
-</mat-card>
+<mat-divider [inset]="true"></mat-divider>
+<app-on-changes (loggedIn)="authService.isLoggedIn.next($event)"
+                [isLoggedIn]="loggedIn">
+</app-on-changes>
 
