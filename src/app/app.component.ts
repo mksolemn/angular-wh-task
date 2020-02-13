@@ -35,12 +35,8 @@ export class AppComponent implements OnInit, AfterContentChecked {
 
   getState(outlet) {
   debugger;
-    console.log('outlet: ', outlet.activatedRouteData);
     this.animationState = outlet.activatedRouteData.state;
-    outlet.activatedRouteData.state = null;
     return outlet.activatedRouteData.state;
-
-
   }
 
 }
