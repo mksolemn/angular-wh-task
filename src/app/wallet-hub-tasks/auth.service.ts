@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {BehaviorSubject} from 'rxjs';
-import {CommunicationForm} from './communication-form';
+import {CommunicationForm} from './_data/communication-form';
 
 @Injectable({
   providedIn: 'root'

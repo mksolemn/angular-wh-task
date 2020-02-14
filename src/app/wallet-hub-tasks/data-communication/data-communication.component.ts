@@ -13,9 +13,20 @@ export class DataCommunicationComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private authService: AuthService) {
     this.validators = {
-      email: Validators.pattern(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i),
-      message: Validators.required,
-      donation: Validators.required
+      email: [
+        Validators.required,
+        Validators.pattern(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i)
+      ],
+      message: [
+        Validators.required,
+        Validators.minLength(80),
+        Validators.maxLength(255)
+      ],
+      donation: [
+        Validators.required,
+        Validators.min(1),
+        Validators.max(10000)
+      ]
     };
   }
 

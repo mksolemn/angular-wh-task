@@ -52,7 +52,9 @@
 </main>
 
 <mat-divider [inset]="true"></mat-divider>
+
 <app-on-changes (loggedIn)="authService.isLoggedIn.next($event)"
                 [isLoggedIn]="loggedIn">
+  <div class="counterLabel"> Counter:</div>
 </app-on-changes>
 

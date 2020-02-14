@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthService} from '../auth.service';
-import {CommunicationForm} from '../communication-form';
+import {CommunicationForm} from '../_data/communication-form';
 
 @Component({
   selector: 'app-guarded-route',
@@ -21,7 +21,6 @@ export class GuardedRouteComponent implements OnInit {
   ngOnInit() {
     this.authService.communicatedData
       .subscribe(res => {
-        console.log('Guarded message: ', res);
         this._messageData = res;
       });
   }

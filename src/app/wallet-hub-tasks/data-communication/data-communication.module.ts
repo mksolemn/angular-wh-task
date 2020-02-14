@@ -5,12 +5,14 @@ import {MatFormFieldModule, MatGridListModule, MatInputModule, MatRadioModule} f
 import {DataCommunicationRoutingModule} from './data-communication-routing.module';
 import {ReactiveFormsModule} from '@angular/forms';
 import {FormatCurrencyDirective} from '../_directives/format-currency.directive';
+import { MaterialInputComponent } from './material-input/material-input.component';
 
 
 @NgModule({
   declarations: [
     DataCommunicationComponent,
-    FormatCurrencyDirective
+    FormatCurrencyDirective,
+    MaterialInputComponent
     ],
   imports: [
     ReactiveFormsModule,

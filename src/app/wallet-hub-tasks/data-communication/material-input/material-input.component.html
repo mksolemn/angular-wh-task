@@ -1,0 +1,9 @@
+<mat-form-field appearance="fill">
+  <mat-label [innerHTML]="formRefs.formCtrlName"></mat-label>
+  <input [formControl]="formRefs.formGr.controls[formRefs.formCtrlName]"
+         appFormatCurrency
+         matInput>
+  <mat-error *ngIf="isInvalid()">
+    Whoops... that's not right
+  </mat-error>
+</mat-form-field>

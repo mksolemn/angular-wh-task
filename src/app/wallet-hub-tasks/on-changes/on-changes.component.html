@@ -1,5 +1,5 @@
 <pre [ngStyle]="{'color': isLoggedIn?'green':'red'}">
   {{changesOutput|json}}
   <br>
- count: {{changeCounter}}
+  <ng-content select=".counterLabel"></ng-content> {{changeCounter}}
 </pre>
