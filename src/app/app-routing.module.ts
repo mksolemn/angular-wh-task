@@ -19,7 +19,12 @@ const routes: Routes = [
         loadChildren: () => import('./wallet-hub-tasks/data-communication/data-communication.module')
           .then(m => m.DataCommunicationModule)
       }
-    ]
+    ],
+  },
+  {
+    path: 'design-slice',
+    loadChildren: () => import('./wallet-hub-tasks/slice-design-test/slice-design-test.module')
+      .then(m => m.SliceDesignTestModule)
   },
   {path: '**', redirectTo: '', pathMatch: 'full'}
 ];

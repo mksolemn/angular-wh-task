@@ -26,7 +26,7 @@ describe('FormatCurrencyDirective', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [CommonModule, HostModule], // * we import the host module
+      imports: [CommonModule, HostModule],
     }).compileComponents();
 
     fixture = TestBed.createComponent(HostComponent);
@@ -34,7 +34,7 @@ describe('FormatCurrencyDirective', () => {
     element = fixture.nativeElement;
     inputEl = element.querySelector('input');
     inputEl.value = '12999';
-    fixture.detectChanges(); // * so the directive gets appilied
+    fixture.detectChanges();
   });
 
   it('should create a host instance', () => {
@@ -42,6 +42,6 @@ describe('FormatCurrencyDirective', () => {
   });
 
   it('should format currency with thousand decimals', () => {
-    expect(inputEl.value).toBe('12,999'); // * we check if the directive worked correctly
+    expect(inputEl.value).toBe('12,999');
   });
 });

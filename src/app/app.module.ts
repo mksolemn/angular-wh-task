@@ -16,6 +16,7 @@ import {
 } from '@angular/material';
 import {MatButtonModule} from '@angular/material';
 import {ReactiveFormsModule} from '@angular/forms';
+import { SliceDesignTestModule} from './wallet-hub-tasks/slice-design-test/slice-design-test.module';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import {ReactiveFormsModule} from '@angular/forms';
     MatCardModule,
     MatGridListModule,
     MatIconModule,
-    MatDividerModule
+    MatDividerModule,
+    SliceDesignTestModule
   ],
   exports: [],
   providers: [],
