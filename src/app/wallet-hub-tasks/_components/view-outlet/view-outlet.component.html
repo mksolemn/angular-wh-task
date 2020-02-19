@@ -1,0 +1,13 @@
+<app-toolbar-nav></app-toolbar-nav>
+<app-main-nav></app-main-nav>
+<main #templateref
+      [@routerTransition]="getState(o)"
+      [ngClass]="useCssTransition"
+      class="cssTransition">
+<router-outlet #o="outlet"></router-outlet>
+</main>
+
+<app-on-changes (loggedIn)="authService.isLoggedIn.next($event)"
+                [isLoggedIn]="isLoggedIn">
+  <div class="counterLabel"> Counter:</div>
+</app-on-changes>

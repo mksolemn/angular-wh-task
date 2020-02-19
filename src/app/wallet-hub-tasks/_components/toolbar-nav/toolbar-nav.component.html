@@ -1,0 +1,24 @@
+<mat-toolbar color="primary">
+  <button
+    [routerLink]="['/']"
+    color="primary"
+    mat-raised-button>
+    <mat-icon
+      aria-hidden="false"
+      aria-label="Home icon">
+      home
+    </mat-icon>
+  </button>
+  <button
+    (click)="authService.isLoggedIn.next(true)"
+    color="primary"
+    mat-raised-button>
+    Login
+  </button>
+  <button
+    (click)="logout()"
+    color="primary"
+    mat-raised-button>
+    Logout
+  </button>
+</mat-toolbar>
