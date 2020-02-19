@@ -4,9 +4,18 @@ import {NgModule} from '@angular/core';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {OnChangesModule} from './wallet-hub-tasks/on-changes/on-changes.module';
-import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-browser/animations';
-import {MatCardModule, MatGridListModule, MatIconModule, MatListModule, MatMenuModule, MatToolbarModule} from '@angular/material';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {
+  MatCardModule,
+  MatDividerModule,
+  MatGridListModule,
+  MatIconModule,
+  MatListModule,
+  MatMenuModule,
+  MatToolbarModule
+} from '@angular/material';
 import {MatButtonModule} from '@angular/material';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,16 +27,16 @@ import {MatButtonModule} from '@angular/material';
     OnChangesModule,
     BrowserAnimationsModule,
     MatMenuModule,
+    ReactiveFormsModule,
     MatButtonModule,
     MatListModule,
     MatToolbarModule,
     MatCardModule,
     MatGridListModule,
-    MatIconModule
+    MatIconModule,
+    MatDividerModule
   ],
-  exports: [
-    MatGridListModule
-  ],
+  exports: [],
   providers: [],
   bootstrap: [AppComponent]
 })

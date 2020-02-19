@@ -1,29 +1,26 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {DataCommunicationComponent} from './data-communication.component';
-import {MatFormFieldModule, MatGridListModule, MatInputModule, MatRadioModule} from '@angular/material';
+import {MatFormFieldModule, MatGridListModule, MatRadioModule} from '@angular/material';
 import {DataCommunicationRoutingModule} from './data-communication-routing.module';
 import {ReactiveFormsModule} from '@angular/forms';
-import {FormatCurrencyDirective} from '../_directives/format-currency.directive';
-import { MaterialInputComponent } from './material-input/material-input.component';
+import {MaterialInputModule} from './material-input/material-input.module';
 
 
 @NgModule({
   declarations: [
-    DataCommunicationComponent,
-    FormatCurrencyDirective,
-    MaterialInputComponent
+    DataCommunicationComponent
     ],
   imports: [
     ReactiveFormsModule,
     CommonModule,
     MatFormFieldModule,
-    MatInputModule,
     DataCommunicationRoutingModule,
     MatRadioModule,
-    MatGridListModule
+    MatGridListModule,
+    MaterialInputModule
   ],
-  exports: [FormatCurrencyDirective]
+  exports: []
 })
 export class DataCommunicationModule {
 }

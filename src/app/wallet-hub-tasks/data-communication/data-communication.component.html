@@ -1,12 +1,7 @@
 <form (ngSubmit)="onSubmit()" [formGroup]="communicationForm">
 
   <div *ngFor="let formControl of communicationForm.controls | keyvalue">
-    <ng-template [ngIfElse]="duration" [ngIf]="formControl.key !== 'donation'">
       <app-material-input [formRefs]="{formGr: communicationForm, formCtrlName: formControl.key}"></app-material-input>
-    </ng-template>
-    <ng-template #duration>
-      <app-material-input [formRefs]="{formGr: communicationForm, formCtrlName: formControl.key}"></app-material-input>
-    </ng-template>
   </div>
 
   <button [disabled]="!communicationForm.valid"

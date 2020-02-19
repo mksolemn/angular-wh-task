@@ -1,8 +1,14 @@
 <mat-form-field appearance="fill">
   <mat-label [innerHTML]="formRefs.formCtrlName"></mat-label>
-  <input [formControl]="formRefs.formGr.controls[formRefs.formCtrlName]"
-         appFormatCurrency
-         matInput>
+  <ng-template [ngIfElse]="donation" [ngIf]="formRefs.formCtrlName !== 'donation'">
+    <input [formControl]="formRefs.formGr.controls[formRefs.formCtrlName]"
+           matInput>
+  </ng-template>
+  <ng-template #donation>
+    <input [formControl]="formRefs.formGr.controls[formRefs.formCtrlName]"
+           appFormatCurrency
+           matInput>
+  </ng-template>
   <mat-error *ngIf="isInvalid()">
     Whoops... that's not right
   </mat-error>

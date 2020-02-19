@@ -19,13 +19,13 @@ export class DataCommunicationComponent implements OnInit {
       ],
       message: [
         Validators.required,
-        Validators.minLength(80),
+        Validators.minLength(3),
         Validators.maxLength(255)
       ],
       donation: [
         Validators.required,
         Validators.min(1),
-        Validators.max(10000)
+        Validators.max(999999999)
       ]
     };
   }
@@ -34,7 +34,7 @@ export class DataCommunicationComponent implements OnInit {
     this.communicationForm = this.fb.group({
       email: ['', this.validators.email],
       message: ['', this.validators.message],
-      donation: ['', this.validators.donation]
+      donation: [1001, this.validators.donation]
     });
   }
 
