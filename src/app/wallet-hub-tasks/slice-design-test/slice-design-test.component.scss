@@ -1,0 +1,43 @@
+@import "~normalize-scss/sass/normalize";
+
+//resets
+ul {
+  list-style-type: none
+}
+
+li {
+  margin: 0;
+  padding: 0;
+}
+
+
+//spacing vars
+$menu-height: 55px;
+$vertical-spacing: 55px;
+
+//color vars
+$primary-bg-color: #23123A;
+$secondary-bg-color: #F1F5F8;
+
+:host {
+  background-color: $secondary-bg-color;
+}
+
+.util-menu, .menu {
+  height: $menu-height;
+}
+
+.util-menu,
+.hero {
+  background-color: $primary-bg-color;
+}
+
+.hero {
+  height: calc(100vh);
+}
+
+
+// spacing
+.submission-form {
+  padding: $vertical-spacing auto;
+}

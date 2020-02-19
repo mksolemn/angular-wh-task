@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-slice-design-test',
@@ -6,8 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./slice-design-test.component.scss']
 })
 export class SliceDesignTestComponent implements OnInit {
+  public title: string;
+  public heroImage: string;
 
-  constructor() { }
+  constructor() {
+    this.title = 'Do the right thing';
+  }
 
   ngOnInit() {
   }

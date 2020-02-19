@@ -2,7 +2,7 @@ import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import {MaterialInputModule} from './wallet-hub-tasks/data-communication/material-input/material-input.module';
-import {MatDividerModule, MatFormFieldModule, MatIconModule, MatListModule, MatToolbarModule} from '@angular/material';
+import {MatFormFieldModule, MatIconModule, MatListModule, MatToolbarModule} from '@angular/material';
 import {OnChangesModule} from './wallet-hub-tasks/on-changes/on-changes.module';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 
@@ -13,7 +13,6 @@ describe('AppComponent', () => {
         NoopAnimationsModule,
         MaterialInputModule,
         MatToolbarModule,
-        MatDividerModule,
         MatListModule,
         MatIconModule,
         MatFormFieldModule,

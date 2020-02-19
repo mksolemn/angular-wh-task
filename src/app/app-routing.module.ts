@@ -1,10 +1,13 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 import {AuthGuard} from './wallet-hub-tasks/auth.guard';
+import {SliceDesignTestComponent} from './wallet-hub-tasks/slice-design-test/slice-design-test.component';
+import {ViewOutletComponent} from './wallet-hub-tasks/_components/view-outlet/view-outlet.component';
 
 const routes: Routes = [
   {
-    path: 'task',
+    path: '',
+    component: ViewOutletComponent,
     children: [
       {
         path: 'guardedRoute',
@@ -23,8 +26,7 @@ const routes: Routes = [
   },
   {
     path: 'design-slice',
-    loadChildren: () => import('./wallet-hub-tasks/slice-design-test/slice-design-test.module')
-      .then(m => m.SliceDesignTestModule)
+    component: SliceDesignTestComponent
   },
   {path: '**', redirectTo: '', pathMatch: 'full'}
 ];
