@@ -1,3 +1,17 @@
+### Quick Run steps
+
+``` shell script
+npm install
+```
+
+```shell script
+ng serve
+```
+
+```shell script
+ng test
+```
+
 # DemoWh
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.12.
