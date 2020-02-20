@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {AuthService} from '../auth.service';
-import {CommunicationForm} from '../_data/communication-form';
+import {AuthService} from '../../auth.service';
+import {CommunicationForm} from '../../_data/communication-form';
 
 @Component({
   selector: 'app-guarded-route',

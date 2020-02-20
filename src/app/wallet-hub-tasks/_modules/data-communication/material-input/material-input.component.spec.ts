@@ -1,12 +1,9 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-
 import {MaterialInputComponent} from './material-input.component';
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import {MatFormFieldModule, MatInputModule} from '@angular/material';
-import {FormatCurrencyDirective} from '../../_directives/format-currency.directive';
-import {Component} from '@angular/core';
+import {FormatCurrencyDirective} from '../../../_directives/format-currency.directive';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
-import {By} from 'protractor';
 
 describe('MaterialInputComponent', () => {
   let component: MaterialInputComponent;

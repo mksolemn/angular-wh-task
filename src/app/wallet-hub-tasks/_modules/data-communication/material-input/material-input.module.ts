@@ -3,7 +3,7 @@ import {CommonModule} from '@angular/common';
 import {MaterialInputComponent} from './material-input.component';
 import {MatFormFieldModule, MatInputModule} from '@angular/material';
 import {ReactiveFormsModule} from '@angular/forms';
-import {FormatCurrencyDirective} from '../../_directives/format-currency.directive';
+import {FormatCurrencyDirective} from '../../../_directives/format-currency.directive';
 
 
 @NgModule({
