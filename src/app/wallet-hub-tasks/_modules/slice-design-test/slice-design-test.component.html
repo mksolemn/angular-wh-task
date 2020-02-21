@@ -30,10 +30,8 @@
       <div class="credit-card-img"><img alt="" src=""></div>
       <div class="credit-card-approval"></div>
       <div class="perks-list">
-        <ul>
-          <li></li>
-          <li></li>
-          <li></li>
+        <ul *ngFor="let perk of perks">
+          <li [innerHTML]="perk"></li>
         </ul>
       </div>
     </div>

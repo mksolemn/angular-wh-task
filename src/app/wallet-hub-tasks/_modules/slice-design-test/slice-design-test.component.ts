@@ -10,11 +10,17 @@ export class SliceDesignTestComponent implements OnInit {
   public heroImage: string;
   public formTitle: string;
   public creditCardName: string;
+  public perks: string[];
 
   constructor() {
     this.title = 'Do the right thing';
     this.formTitle = 'Credit Opportunities With Good Approval Odds†';
     this.creditCardName = 'Barclaycard CashForward™ World MasterCard™';
+    this.perks = [
+      'Get a $100 cash rewards bonus after you spend $500 in purchases in the first 90 days after account oppening.',
+      'Earn unlimited 1.5% cash rewards on every purcahse.',
+      'Earn unlimited 1.5% cash rewards on every...show more '
+    ];
   }
 
   ngOnInit() {
