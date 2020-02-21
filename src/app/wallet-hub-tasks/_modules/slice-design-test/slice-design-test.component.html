@@ -3,22 +3,40 @@
 </section>
 
 <section class="menu">
-<ul class="nav" fxFlex="row" fxLayoutAlign="space-between">
-  <li class="nav-item"><a href="#">Navigation Link One</a></li>
-  <li class="nav-item"><a href="#">Navigation Link Two</a></li>
-  <li class="nav-item"><a href="#">Navigation Link Three</a></li>
-</ul>
+  <ul class="nav" fxFlex="row" fxLayoutAlign="space-between">
+    <li class="nav-item"><a href="#">Navigation Link One</a></li>
+    <li class="nav-item"><a href="#">Navigation Link Two</a></li>
+    <li class="nav-item"><a href="#">Navigation Link Three</a></li>
+  </ul>
 </section>
 
 <section class="hero">
-<div class="hero-img" [style.backgroundImage]="">
-  <h1 [innerHTML]="title"></h1>
-</div>
+  <div [style.backgroundImage]="" class="hero-img">
+    <h1 [innerHTML]="title"></h1>
+  </div>
 </section>
 <section class="submission-form-wrapper">
 
-  <div class="submission-form">
+  <div class="form-title">
+    <h3 [innerHTML]="formTitle"></h3>
+  </div>
 
+  <div class="submission-form">
+    <div class="form-header" fxFlex="row" fxLayoutAlign="space-between">
+      <h3 [innerHTML]="creditCardName"></h3>
+      <span class="review-score"></span>
+    </div>
+    <div class="credit-card-details" fxFlex="row" fxLayoutAlign="space-between">
+      <div class="credit-card-img"><img alt="" src=""></div>
+      <div class="credit-card-approval"></div>
+      <div class="perks-list">
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+    </div>
   </div>
 
 </section>
