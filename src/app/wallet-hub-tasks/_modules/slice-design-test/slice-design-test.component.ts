@@ -7,10 +7,14 @@ import {Component, OnInit} from '@angular/core';
 })
 export class SliceDesignTestComponent implements OnInit {
   public title: string;
-  public heroImage: string;
   public formTitle: string;
   public creditCardName: string;
   public perks: string[];
+  public reviewsTotal: string;
+  public approveOdds: string;
+  public approveOddsText: string;
+  public applyBtnText: string;
+  public bottomLinkText: string;
 
   constructor() {
     this.title = 'Do the right thing';
@@ -21,6 +25,11 @@ export class SliceDesignTestComponent implements OnInit {
       'Earn unlimited 1.5% cash rewards on every purcahse.',
       'Earn unlimited 1.5% cash rewards on every...show more '
     ];
+    this.reviewsTotal = '3,252 Reviews';
+    this.approveOddsText = 'Approval Odds†';
+    this.approveOdds = 'Very Good';
+    this.applyBtnText = 'Apply Now';
+    this.bottomLinkText = 'See Details Rates & Fees';
   }
 
   ngOnInit() {

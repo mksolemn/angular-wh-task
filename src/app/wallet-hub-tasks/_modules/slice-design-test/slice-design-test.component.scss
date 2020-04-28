@@ -1,15 +1,11 @@
 @import "~normalize-scss/sass/normalize";
 
-//resets
-ul {
-  list-style-type: none
+@font-face {
+  font-family: "Proxima-Nova";
+  src: url(src/assets/fonts/proximanova-reg-webfont.otf) format("opentype"),
+  url(src/assets/fonts/proximanova-reg-webfont.woff2) format("woff2"),
+  url(src/assets/fonts/proximanova-reg-webfont.woff) format("woff");
 }
-
-li {
-  margin: 0;
-  padding: 0;
-}
-
 
 //spacing vars
 $menu-height: 55px;
@@ -18,12 +14,27 @@ $vertical-spacing: 55px;
 //color vars
 $primary-bg-color: #23123A;
 $secondary-bg-color: #F1F5F8;
+$border-color: #EDEFF0;
+$separator-color: #7F949C;
+$rating-color: #59D8D1;
+$btn-color: #FA6E3D;
 
-:host {
-  background-color: $secondary-bg-color;
+//resets
+
+li {
+  margin: 0;
+  padding: 0;
 }
 
-.util-menu, .menu {
+html, body, h1, h2, h3, p, a {
+  font-family: Proxima-Nova, sans-serif;
+}
+
+hr {
+  border-color: $separator-color;
+}
+
+.util-menu {
   height: $menu-height;
 }
 
@@ -32,12 +43,150 @@ $secondary-bg-color: #F1F5F8;
   background-color: $primary-bg-color;
 }
 
-.hero {
-  height: calc(100vh);
+.menu {
+  ul.nav {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    .nav-item {
+      width: 100%;
+      font-weight: bold;
+      font-size: 16px;
+      border-right: solid 1px $border-color;
+      text-align: center;
+      padding: 15px;
+      display: inline-block;
+
+      a {
+        color: #000;
+
+      }
+    }
+  }
+
 }
 
+.hero {
+  height: calc(100vh);
+  max-height: 315px;
+  position: relative;
+  background-image: url(src/assets/img/bg_m.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  position: relative;
+  padding: 30px 30px 0;
 
-// spacing
+  .hero-title {
+    font-size: 54px;
+    color: #fff;
+    margin: 0px;
+    @media (min-width: 768px) {
+      font-size: 102px;
+      background-image: url(src/assets/img/bg.png);
+    }
+  }
+
+  @media (min-width: 768px) {
+    max-height: 530px;
+    background-image: url(src/assets/img/bg.png);
+    padding: 60px 60px 0;
+  }
+}
+
+.submission-form-wrapper {
+  background-color: $secondary-bg-color;
+
+  .form-title {
+    margin-top: 0;
+    padding: 30px 15px;
+
+    @media (min-width: 768px) {
+      margin-bottom: 30px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    padding: 60px;
+  }
+}
+
 .submission-form {
-  padding: $vertical-spacing auto;
+  background-color: #fff;
+  padding: 15px;
+
+  .form-header {
+    width: 100%;
+
+    > * {
+      font-weight: normal;
+      width: 100%;
+    }
+  }
+
+  @media (min-width: 768px) {
+    padding: 60px;
+  }
+}
+
+.perks-list {
+  ul {
+    li {
+    }
+  }
+}
+
+.review-score {
+  > * {
+    &:last-child {
+      margin-right: 10px;
+    }
+  }
+}
+
+button.btn {
+  background-color: $btn-color;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 15px;
+  padding: 10px;
+  color: #fff;
+}
+
+.rating {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+
+  &.star {
+    background-image: url(src/assets/img/star-hollow.png);
+
+    &.full {
+      background-image: url(src/assets/img/star-full.png);
+    }
+  }
+}
+
+.credit-card-details {
+  margin: 15px auto;
+
+  .credit-card-approval {
+    text-align: center;
+    padding: 0 15px;
+
+    .odds {
+      font-weight: bold;
+      color: #fff;
+      background-color: $rating-color;
+      margin: 15px auto auto;
+      text-align: center;
+      padding: 7.5px 15px;
+      border-radius: 15px;
+      white-space: nowrap;
+    }
+  }
 }

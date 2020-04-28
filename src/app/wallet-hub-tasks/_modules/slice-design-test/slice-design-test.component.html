@@ -1,9 +1,7 @@
-<section class="util-menu">
-
-</section>
+<section class="util-menu"></section>
 
 <section class="menu">
-  <ul class="nav" fxFlex="row" fxLayoutAlign="space-between">
+  <ul class="nav" fxLayoutAlign="space-around">
     <li class="nav-item"><a href="#">Navigation Link One</a></li>
     <li class="nav-item"><a href="#">Navigation Link Two</a></li>
     <li class="nav-item"><a href="#">Navigation Link Three</a></li>
@@ -11,29 +9,47 @@
 </section>
 
 <section class="hero">
-  <div [style.backgroundImage]="" class="hero-img">
-    <h1 [innerHTML]="title"></h1>
-  </div>
+  <h1 class="hero-title" [innerHTML]="title"></h1>
 </section>
-<section class="submission-form-wrapper">
 
+<section class="submission-form-wrapper">
   <div class="form-title">
     <h3 [innerHTML]="formTitle"></h3>
   </div>
-
   <div class="submission-form">
-    <div class="form-header" fxFlex="row" fxLayoutAlign="space-between">
-      <h3 [innerHTML]="creditCardName"></h3>
-      <span class="review-score"></span>
+    <div class="form-header" fxLayout="row">
+      <h3 [innerHTML]="creditCardName" fxFlex="2 1 100%"></h3>
+      <span class="review-score" fxFlex="2 2 100%" fxLayoutAlign="end" fxFlexAlign="center" fxHide fxShow.gt-xs>
+        <span class="rating star full"></span>
+        <span class="rating star full"></span>
+        <span class="rating star full"></span>
+        <span class="rating star full"></span>
+        <span class="rating star"></span>
+        {{this.reviewsTotal}}
+      </span>
     </div>
-    <div class="credit-card-details" fxFlex="row" fxLayoutAlign="space-between">
-      <div class="credit-card-img"><img alt="" src=""></div>
-      <div class="credit-card-approval"></div>
-      <div class="perks-list">
+    <div class="credit-card-details" fxLayout="column" fxLayout.gt-xs="row">
+      <div fxLayoutAlign="space-around" fxFlex="1 1 100%" fxFlex.gt-xs="2 2 100%">
+        <div class="credit-card-img">
+          <img alt="" src="/assets/img/credit_card.png">
+        </div>
+        <div class="credit-card-approval">
+          <div [innerHTML]="approveOddsText"></div>
+          <div class="odds" [innerHTML]="approveOdds"></div>
+        </div>
+      </div>
+      <div class="perks-list" fxFlex="1 1 100%">
         <ul *ngFor="let perk of perks">
           <li [innerHTML]="perk"></li>
         </ul>
       </div>
+    </div>
+    <div>
+      <button class="btn" [innerHTML]="applyBtnText" fxFlex.gt-xs="1 1 40%"></button>
+    </div>
+    <hr/>
+    <div class="link">
+      <a href="#" [innerHTML]="bottomLinkText"></a>
     </div>
   </div>
 

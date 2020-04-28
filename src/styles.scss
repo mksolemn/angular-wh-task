@@ -7,18 +7,17 @@ html, body, main {
   padding: 0px;
 }
 
-body {
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+html, body, h1, h2, h3, p, a {
+  margin: 0;
 }
 
-ul {
-  list-style-type: none;
-
-  li {
-    padding: 0;
-    margin: 8px 16px;
-    display: inline-block;
-  }
+a {
+  text-decoration: none;
+}
+button {
+  border:none;
+  background:transparent
+;
 }
 
 .mat-raised-button[disabled] {
